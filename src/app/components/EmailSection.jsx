@@ -1,140 +1,73 @@
 "use client";
-import React, { useState } from "react";
-import { NextResponse } from "next/server";
+import { motion } from "framer-motion";
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0 },
+};
 
-const EmailSection = () => {
-  const [emailSubmitted, setEmailSubmitted] = useState(false);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const data = {
-      email: e.target.email.value,
-      subject: e.target.subject.value,
-      message: e.target.message.value,
-    };
-    const JSONdata = JSON.stringify(data);
-    const endpoint = "/api/send";
-  
-    // Form the request for sending data to the server.
-    const options = {
-      // The method is POST because we are sending data.
-      method: "POST",
-      // Tell the server we're sending JSON.
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      // Body of the request is the JSON data we created above.
-      body: JSONdata,
-    };
-  
-    try {
-      const response = await fetch(endpoint, options);
-  
-      if (!response.ok) {
-        throw new Error("failed to send message");
-      }
-  
-      const responseData = await response.json();
-  
-      if (response.status === 200) {
-        console.log("Message sent.");
-        setEmailSubmitted(true);
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
+export default function ContactSection() {
   return (
-  <section
-    id="contact"
-    className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative"
-  >
-    {/* Background glow */}
-    <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#1f3d2b] to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
+    <section id="contact" className="py-16 text-white">
 
-    <div className="z-10">
-      <h5 className="text-xl font-bold text-white my-2">
-        Let&apos;s Connect
-      </h5>
+      {/* HEADING WITH SAME ANIMATION STYLE */}
+      <motion.div
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.6 }}
+        className="text-center mb-10"
+      >
+        <h2 className="text-4xl font-bold text-green-300 relative inline-block group">
+          Get In Touch
+          <span className="absolute left-0 -bottom-1 w-0 h-[3px] bg-green-300 rounded transition-all duration-300 group-hover:w-full"></span>
+        </h2>
 
-      <p className="text-[#9fb3a8] mb-4 max-w-md">
-        I&apos;m currently looking for new opportunities, my inbox is always
-        open. Whether you have a question or just want to say hi, I&apos;ll
-        try my best to get back to you!
-      </p>
-    </div>
-
-    <div>
-      {emailSubmitted ? (
-        <p className="text-[#6b8f71] text-sm mt-2">
-          Email sent successfully!
+        <p className="text-[#ADB7BE] mt-4">
+          Let’s work together — I’m open to opportunities and projects.
         </p>
-      ) : (
-        <form className="flex flex-col" onSubmit={handleSubmit}>
-          
-          <div className="mb-6">
-            <label
-              htmlFor="email"
-              className="text-white block mb-2 text-sm font-medium"
-            >
-              Your email
-            </label>
-            <input
-              name="email"
-              type="email"
-              id="email"
-              required
-              className="bg-[#18191E] border border-[#2f4f3e] placeholder-[#8fa39a] text-gray-100 text-sm rounded-lg block w-full p-2.5 focus:outline-none focus:border-[#6b8f71]"
-              placeholder="jacob@google.com"
-            />
-          </div>
+      </motion.div>
 
-          <div className="mb-6">
-            <label
-              htmlFor="subject"
-              className="text-white block text-sm mb-2 font-medium"
-            >
-              Subject
-            </label>
-            <input
-              name="subject"
-              type="text"
-              id="subject"
-              required
-              className="bg-[#18191E] border border-[#2f4f3e] placeholder-[#8fa39a] text-gray-100 text-sm rounded-lg block w-full p-2.5 focus:outline-none focus:border-[#6b8f71]"
-              placeholder="Just saying hi"
-            />
-          </div>
+      {/* FORM CONTAINER */}
+      <motion.div
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.7 }}
+        className="max-w-2xl mx-auto glass p-6 rounded-xl"
+      >
+        <form className="space-y-4">
 
-          <div className="mb-6">
-            <label
-              htmlFor="message"
-              className="text-white block text-sm mb-2 font-medium"
-            >
-              Message
-            </label>
-            <textarea
-              name="message"
-              id="message"
-              className="bg-[#18191E] border border-[#2f4f3e] placeholder-[#8fa39a] text-gray-100 text-sm rounded-lg block w-full p-2.5 focus:outline-none focus:border-[#6b8f71]"
-              placeholder="Let's talk about..."
-            />
-          </div>
+          <input
+            type="text"
+            placeholder="Your Name"
+            className="w-full p-3 bg-[#121212] border border-[#2a2a2a] rounded-lg text-white focus:border-green-400 outline-none transition"
+          />
+
+          <input
+            type="email"
+            placeholder="Your Email"
+            className="w-full p-3 bg-[#121212] border border-[#2a2a2a] rounded-lg text-white focus:border-green-400 outline-none transition"
+          />
+
+          <textarea
+            placeholder="Your Message"
+            rows="5"
+            className="w-full p-3 bg-[#121212] border border-[#2a2a2a] rounded-lg text-white focus:border-green-400 outline-none transition"
+          />
 
           <button
             type="submit"
-            className="bg-gradient-to-r from-[#1f3d2b] via-[#6b8f71] to-[#c2a35d] hover:opacity-90 text-white font-medium py-2.5 px-5 rounded-lg w-full"
+            className="w-full py-3 bg-green-700 rounded-lg hover:shadow-[0_0_20px_rgba(107,143,113,0.4)] transition"
           >
             Send Message
           </button>
-        </form>
-      )}
-    </div>
-  </section>
-);
-};
 
-export default EmailSection;
+        </form>
+      </motion.div>
+
+    </section>
+  );
+}
