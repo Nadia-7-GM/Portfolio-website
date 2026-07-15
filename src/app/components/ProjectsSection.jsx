@@ -46,6 +46,24 @@ const projectsData = [
     gitUrl: "https://github.com/Nadia-7-GM/Furniro-Ecommerce-Website",
     previewUrl: "https://furniro-ecommerce-website.vercel.app/",
   },
+  {
+    id: 5,
+    title: "Password Strength Checker",
+    description:"Protect your digital identity with strong passwords. This tool helps you evaluate and improve your password security using professional security standards.",
+    image: "/images/projects/pssword-strength-meter.png",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/Nadia-7-GM/Password-Strength-Meter",
+    previewUrl: "https://nadia-7-gm-password-strength-meter-app-iymcjv.streamlit.app/",
+  },
+ {
+    id: 6,
+    title: "Data Sweeper Pro ",
+    description:"A powerful data processing suite designed for professionals who demand efficiency and precision.",
+    image: "/images/projects/data-sweeper.png",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/Nadia-7-GM/Data-Sweeper",
+    previewUrl: "https://nadia-7-gm-data-sweeper-app-39x9on.streamlit.app/",
+  },
  
   
 ];

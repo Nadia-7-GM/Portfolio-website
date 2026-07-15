@@ -6,7 +6,7 @@ export const Socials_data = [
     alt: "Github Icon",
   },
   {
-    social_login: "https://www.linkedin.com/in/nadia-46a68126a/",
+    social_login: "https://www.linkedin.com/in/nadia-awan-8277b2421/",
     path: "/linkedin-logo.png",
     alt: "Linkedin Icon",
   },

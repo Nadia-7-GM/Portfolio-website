@@ -52,6 +52,10 @@ const TAB_DATA = [
     content: (
       <ul className="list-disc pl-2 space-y-2 text-[#ADB7BE]">
         <li>Bachelor’s in Computer Science (In Progress)</li>
+        <li>Intermediate in Pre-Engineering</li>
+        <li>Matriculation in Science</li>
+        
+
       </ul>
     ),
   },
@@ -114,10 +118,11 @@ const AboutSection = () => {
 
           {/* DESCRIPTION */}
           <p className="text-[#ADB7BE] hover:text-white transition-colors duration-300 leading-relaxed">
-            I am a full stack web developer with a strong passion for building
-            modern, interactive, and responsive web applications. I work with
-            HTML, CSS, JavaScript, React, Next.js, PHP, and MySQL. I enjoy
-            building scalable systems and solving real-world problems.
+            Hi, I&apos;m Nadia — a Computer Science student and aspiring Full-Stack Software Engineer focused on building modern, scalable, and impactful web applications.
+
+            I work with React, Next.js, JavaScript, Python, Node.js, Tailwind CSS, and SQL, and I&apos;m expanding into AI, automation, backend systems, and cloud technologies.
+
+            I love turning ideas into clean, efficient, and user-centered solutions while continuously learning and improving as an engineer.
           </p>
 
           {/* TABS */}
