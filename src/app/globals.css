@@ -25,39 +25,4 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
-/* ==========================
-   EXPERIENCE TIMELINE
-========================== */
 
-@media screen and (max-width: 1170px) {
-
-  /* Timeline line */
-  .vertical-timeline::before {
-    left: 18px !important;
-  }
-
-  /* Circle */
-  .vertical-timeline-element-icon {
-    left: 0 !important;
-    width: 42px !important;
-    height: 42px !important;
-    margin-left: 0 !important;
-  }
-
-  /* Card */
-  .vertical-timeline-element-content {
-    margin-left: 60px !important;
-    width: calc(100% - 75px) !important;
-    padding: 22px !important;
-    border-radius: 18px !important;
-  }
-
-  /* Date */
-  .vertical-timeline-element-date {
-    display: block !important;
-    float: none !important;
-    margin-top: 18px;
-    color: #bdbdbd !important;
-    font-weight: 600;
-  }
-}

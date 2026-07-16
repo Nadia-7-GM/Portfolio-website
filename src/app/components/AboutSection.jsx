@@ -31,12 +31,12 @@ const TAB_DATA = [
             hover:-translate-y-1 transition-all duration-300"
           >
             <Image
-              src={icon.src}
-              width={48}
-              height={48}
-              alt={icon.alt}
-              className="hover:scale-110 transition-transform duration-300"
-            />
+  src={icon.src}
+  width={48}
+  height={48}
+  alt={icon.alt}
+  className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 hover:scale-110 transition-transform duration-300"
+/>
           </div>
         ))}
       </div>
@@ -153,7 +153,19 @@ const AboutSection = () => {
           </div>
 
           {/* Mobile Description */}
-          <p className="block sm:hidden text-[#ADB7BE] leading-7 text-[15px] text-center">
+          <p
+  className="
+    block sm:hidden
+    text-[#ADB7BE]
+    text-[14.5px]
+    leading-7
+    text-left
+    max-w-[325px]
+    mx-auto
+    px-1
+  "
+>
+          {/* <p className="block sm:hidden text-[#ADB7BE] leading-7 text-[15px] text-center"> */}
             Computer Science student and aspiring Full-Stack Software Engineer passionate about building modern web applications using React, Next.js, Python, AI, and cloud technologies.
           </p>
 
@@ -171,7 +183,7 @@ const AboutSection = () => {
           </p>
 
           {/* Tabs */}
-          <div className="flex flex-wrap justify-center sm:justify-start gap-3 mt-8">
+          <div className="flex flex-wrap justify-center sm:justify-start gap-3 mt-6">
             <TabButton
               selectTab={() => handleTabChange("skills")}
               active={tab === "skills"}

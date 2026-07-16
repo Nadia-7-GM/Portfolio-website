@@ -16,10 +16,12 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="order-2 lg:order-1 lg:col-span-7 text-center lg:text-left"
+          className="order-2 lg:order-1 lg:col-span-8 w-full text-center lg:text-left"
+        // className="order-2 lg:order-1 lg:col-span-7 text-center lg:text-left"
         >
           {/* HEADING */}
-          <h1 className="break-words text-white font-extrabold leading-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
+          <h1 className="w-full text-white font-extrabold leading-tight text-[2.7rem] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
+            {/* <h1 className="break-words text-white font-extrabold leading-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"> */}
 
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1f3d2b] via-[#6b8f71] to-[#c2a35d]">
               Hello, I&apos;m
@@ -27,7 +29,27 @@ const HeroSection = () => {
 
             <br />
 
-            <motion.span
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 120 }}
+              className="mt-3 flex justify-center lg:justify-start min-h-[85px] sm:min-h-[95px]"
+            >
+              <TypeAnimation
+                sequence={[
+                  "Nadia Awan",
+                  2000,
+                  "Web Developer",
+                  2000,
+                  "Backend Deve.",
+                  2000,
+                ]}
+                wrapper="span"
+                speed={50}
+                repeat={Infinity}
+                className="inline-block whitespace-nowrap text-white transition hover:text-[#c2a35d] text-[2.7rem] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold"
+              />
+            </motion.div>
+            {/* <motion.span
               whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 120 }}
               className="inline-block mt-2"
@@ -46,7 +68,7 @@ const HeroSection = () => {
                 repeat={Infinity}
                 className="text-white hover:text-[#c2a35d] transition"
               />
-            </motion.span>
+            </motion.span> */}
           </h1>
 
           {/* DESCRIPTION */}
@@ -97,7 +119,8 @@ const HeroSection = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
           whileHover={{ scale: 1.03 }}
-          className="order-1 lg:order-2 lg:col-span-5 flex justify-center"
+          className="order-1 lg:order-2 lg:col-span-4 flex justify-center"
+        // className="order-1 lg:order-2 lg:col-span-5 flex justify-center"
         >
           <div className="relative group">
 
