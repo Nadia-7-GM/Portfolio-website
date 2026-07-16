@@ -1,5 +1,26 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    unoptimized: true,
+  },
+};
+
+module.exports = nextConfig;
+
+
+
+
+
+
+
+
+
+
+
+
+
+/** @type {import('next').NextConfig} */
+/**const nextConfig = {
   output: "export", // 🔥 required for GitHub Pages static hosting
 
   images: {
@@ -12,4 +33,4 @@ const nextConfig = {
   assetPrefix: process.env.NODE_ENV === "production" ? "/Portfolio-website/" : "",
 };
 
-module.exports = nextConfig;
+module.exports = nextConfig;*/
