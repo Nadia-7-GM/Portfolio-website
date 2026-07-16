@@ -30,50 +30,86 @@ const AchievementsSection = () => {
       </motion.div>
 
       {/* CARD CONTAINER */}
-      <motion.div
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.7 }}
-        className="border border-[#2a2a2a] rounded-2xl py-10 px-8
-                   bg-[#121212]/70 backdrop-blur-md
-                   shadow-[0_0_30px_rgba(0,0,0,0.4)]
-                   hover:shadow-[0_0_25px_rgba(107,143,113,0.15)]
-                   transition-all duration-300"
+      {/* CARD CONTAINER */}
+<motion.div
+  variants={fadeUp}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true, amount: 0.3 }}
+  transition={{ duration: 0.7 }}
+  className="
+    border border-[#2a2a2a]
+    rounded-2xl
+    bg-[#121212]/70
+    backdrop-blur-md
+    shadow-[0_0_30px_rgba(0,0,0,0.4)]
+    hover:shadow-[0_0_25px_rgba(107,143,113,0.15)]
+    transition-all duration-300
+    py-8 sm:py-10
+    px-5 sm:px-8
+  "
+>
+  {/* MOBILE = 2x2 GRID | DESKTOP = FLEX */}
+  <div
+    className="
+      grid grid-cols-2 gap-5
+      sm:flex sm:flex-wrap sm:justify-between sm:items-center
+    "
+  >
+    {Socials_data.map((data, index) => (
+      <Link
+        key={index}
+        href={data.social_login}
+        target="_blank"
+        className="group"
       >
+        <div
+          className="
+            flex items-center justify-center
+            rounded-2xl
+            bg-[#111827]
+            border border-[#2a2a2a]
 
-        {/* ICONS */}
-        <div className="flex flex-wrap justify-center sm:justify-between items-center gap-10">
+            w-full
+            h-24
+            sm:w-24 sm:h-24
 
-          {Socials_data.map((data, index) => (
-            <Link
-              key={index}
-              href={data.social_login}
-              target="_blank"
-              className="group transition-transform duration-300 hover:scale-110"
-            >
-              <div className="p-3 rounded-xl bg-[#111827]
-                              border border-[#2a2a2a]
-                              group-hover:border-green-400/40
-                              group-hover:shadow-[0_0_20px_rgba(107,143,113,0.25)]
-                              transition-all duration-300">
+            transition-all duration-300 ease-out
 
-                <Image
-                  src={data.path}
-                  width={55}
-                  height={55}
-                  alt={data.alt}
-                  className="opacity-80 group-hover:opacity-100 transition duration-300"
-                />
+            hover:-translate-y-2
+            hover:scale-105
+            hover:border-green-400/40
+            hover:shadow-[0_0_30px_rgba(107,143,113,0.35)]
 
-              </div>
-            </Link>
-          ))}
+            active:scale-95
+            active:border-green-400/60
+            active:shadow-[0_0_35px_rgba(107,143,113,0.45)]
+          "
+        >
+          <Image
+            src={data.path}
+            width={55}
+            height={55}
+            alt={data.alt}
+            className="
+              w-10 h-10
+              sm:w-12 sm:h-12
 
+              opacity-80
+              transition-all duration-300
+
+              group-hover:opacity-100
+              group-hover:rotate-6
+              group-hover:scale-110
+
+              group-active:scale-110
+            "
+          />
         </div>
-
-      </motion.div>
+      </Link>
+    ))}
+  </div>
+</motion.div>
     </div>
   );
 };
